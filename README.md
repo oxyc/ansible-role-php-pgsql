@@ -1,8 +1,8 @@
-# Ansible Role: PHP-MySQL
+# Ansible Role: PHP-PGSQL
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-php-mysql.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-php-mysql)
+[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-php-pgsql.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-php-pgsql)
 
-Installs PHP MySQL support on RedHat/CentOS/Debian/Ubuntu.
+Installs PHP PostgreSQL support on RedHat/CentOS/Debian/Ubuntu.
 
 ## Requirements
 
@@ -16,10 +16,10 @@ Available variables are listed below, along with default values (see `vars/main.
 
 (RedHat/CentOS only) If you have enabled any additional repositories (might I suggest geerlingguy.repo-epel or geerlingguy.repo-remi), those repositories can be listed under this variable (e.g. `remi,epel`). This can be handy, as an example, if you want to install the latest version of PHP 5.4, which is in the Remi repository.
 
-    php_mysql_package: php-mysql # RedHat
-    php_mysql_package: php5-mysql # Debian
+    php_pgsql_package: php-pgsql # RedHat
+    php_pgsql_package: php5-pgsql # Debian
 
-The PHP MySQL package to install via apt/yum. This should only be overridden if you need to install a unique/special package for MySQL support, as in the case of using software collections on Enterprise Linux.
+The PHP PostgreSQL package to install via apt/yum. This should only be overridden if you need to install a unique/special package for PostgreSQL support, as in the case of using software collections on Enterprise Linux.
 
 ## Dependencies
 
@@ -29,7 +29,7 @@ The PHP MySQL package to install via apt/yum. This should only be overridden if 
 
     - hosts: webservers
       roles:
-        - { role: geerlingguy.php-mysql }
+        - { role: geerlingguy.php-pgsql }
 
 ## License
 

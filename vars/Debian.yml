@@ -1,2 +1,2 @@
 ---
-__php_mysql_package: php5-mysql
+__php_pgsql_package: php5-pgsql

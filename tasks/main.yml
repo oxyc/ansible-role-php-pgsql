@@ -3,15 +3,15 @@
 - name: Include OS-specific variables.
   include_vars: "{{ ansible_os_family }}.yml"
 
-- name: Define php_mysql_package.
+- name: Define php_pgsql_package.
   set_fact:
-    php_mysql_package: "{{ __php_mysql_package }}"
-  when: php_mysql_package is not defined
+    php_pgsql_package: "{{ __php_pgsql_package }}"
+  when: php_pgsql_package is not defined
 
 # Installation.
-- name: Install PHP MySQL dependencies (RedHat).
+- name: Install PHP PostgreSQL dependencies (RedHat).
   yum:
-    name: "{{ php_mysql_package }}"
+    name: "{{ php_pgsql_package }}"
     state: present
     enablerepo: "{{ php_enablerepo }}"
   notify:
@@ -19,9 +19,9 @@
     - restart php-fpm
   when: ansible_os_family == 'RedHat'
 
-- name: Install PHP MySQL dependencies (Debian).
+- name: Install PHP PostgreSQL dependencies (Debian).
   apt:
-    name: "{{ php_mysql_package }}"
+    name: "{{ php_pgsql_package }}"
     state: present
   notify:
     - restart webserver

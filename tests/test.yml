@@ -6,6 +6,6 @@
 
   roles:
     - geerlingguy.apache
-    - geerlingguy.mysql
+    - ANXS.postgresql
     - geerlingguy.php
-    - ansible-role-php-mysql
+    - ansible-role-php-pgsql
